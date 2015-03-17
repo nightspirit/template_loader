@@ -7,7 +7,7 @@
     var $temp = $('&lt;div/>').html(partials[0]);
     $temp.find('.grid:eq(0)').html(partials[1]);
     $temp.find('.grid:eq(1)').html(partials[2]);
-    $('#view').html(html);
+    $('#view').html($temp.html());
   });
 </pre>
 <div class="grid"></div>
