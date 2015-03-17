@@ -1,5 +1,5 @@
 # Template Loader
-Simple and Tiny html template loader
+Simple and Tiny html template loader (376 byte)
 
 [Live Demo](http://pofolio.cc/template_loader)
 
