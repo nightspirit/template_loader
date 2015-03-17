@@ -1,7 +1,7 @@
 # Template Loader
 Simple and Tiny html template loader
 
-[Live Demo](http://portfolio.cc/template_loader)
+[Live Demo](http://pofolio.cc/template_loader)
 
 # Dependency
 - jquery (1.8+)
