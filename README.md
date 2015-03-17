@@ -25,4 +25,4 @@ template([IDs...]).then(function(partials){
 ```
 # Tips
 - Template will be cached once it retrieved.
-- Always expect the result as promise, even though they are already be cached and solved. (Don't worry the cached promise will be triggered right away.)
+- Always expect the result as promise, even though they are already cached and solved. (Don't worry the cached promise will be triggered right away.)
