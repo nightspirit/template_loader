@@ -31,15 +31,15 @@
     }
 
     function load_inline(){
-      $.tmpl('inline').then(swap_view);
+      template('inline').then(swap_view);
     }
 
     function load_remote(){
-      $.tmpl('remote1').then(swap_view);
+      template('remote1').then(swap_view);
     }
 
     function load_multi(){
-      $.tmpl(['layout','remote2','remote3']).then(function(partials){
+      template(['layout','remote2','remote3']).then(function(partials){
         var $temp = $('<div/>').html(partials[0]);
         $temp.find('.grid:eq(0)').html(partials[1]);
         $temp.find('.grid:eq(1)').html(partials[2]);
