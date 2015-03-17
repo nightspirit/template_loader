@@ -1,4 +1,4 @@
-var template = (function () {
+$.fn.tmpl = (function () {
   var cache = {};
 
   function get(id) {
