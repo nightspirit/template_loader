@@ -2,7 +2,21 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width">
-  <style>body{font-family:arial;}ul{list-style:none; padding:0; margin:0;} ul:after{clear:both;content:"";display:block;} li{float:left; margin-right:1em;}</style>
+  <style>
+  body{font-family:arial;}
+  ul{list-style:none; padding:0; margin:0;}
+  ul:after{clear:both;content:"";display:block;}
+  li{float:left; margin-right:1em;}
+  pre {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+  } 
+  </style>
 </head>
 <body>
   <ul>
@@ -14,9 +28,11 @@
   <!-- templates -->
   <template id="inline">
     <h1>This is inline page</h1>
-    <div>
-      Lorem ipsum dolor sit amet, te delicata erroribus dissentiet sed. Suas patrioque vel ut. Et mel alia tempor, nam malis affert prodesset at, cum graeci dolores ut. Ad quaerendum temporibus cum, omnes feugait te mel, enim congue ut vim. An mel menandri partiendo, has exerci docendi at. His ex posse animal, modus graeco necessitatibus eu pri, id per soleat detracto.
-    </div>
+    <pre>
+      template('inline').then(function(html){
+        $('#view').html(html);
+      });
+    </pre>
   </template>
   <template id="remote1" src="./partials/r1.html"></template>
   <template id="layout" src="./partials/layout.html"></template>
@@ -26,26 +42,26 @@
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="./template.js"></script>
   <script>
-    function swap_view(html){
-      $('#view').html(html);
-    }
+  function swap_view(html){
+    $('#view').html(html);
+  }
 
-    function load_inline(){
-      template('inline').then(swap_view);
-    }
+  function load_inline(){
+    template('inline').then(swap_view);
+  }
 
-    function load_remote(){
-      template('remote1').then(swap_view);
-    }
+  function load_remote(){
+    template('remote1').then(swap_view);
+  }
 
-    function load_multi(){
-      template(['layout','remote2','remote3']).then(function(partials){
-        var $temp = $('<div/>').html(partials[0]);
-        $temp.find('.grid:eq(0)').html(partials[1]);
-        $temp.find('.grid:eq(1)').html(partials[2]);
-        swap_view($temp.html());
-      });
-    }
+  function load_multi(){
+    template(['layout','remote2','remote3']).then(function(partials){
+      var $temp = $('<div/>').html(partials[0]);
+      $temp.find('.grid:eq(0)').html(partials[1]);
+      $temp.find('.grid:eq(1)').html(partials[2]);
+      swap_view($temp.html());
+    });
+  }
   </script>
 </body>
 </html>

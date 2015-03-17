@@ -2,6 +2,14 @@
 .grid{float:left; width:400px; margin-right:1em;}
 .clear{clear:both;}
 </style>
+<pre>
+  template(['layout','remote2','remote3']).then(function(partials){
+    var $temp = $('&lt;div/>').html(partials[0]);
+    $temp.find('.grid:eq(0)').html(partials[1]);
+    $temp.find('.grid:eq(1)').html(partials[2]);
+    $('#view').html(html);
+  });
+</pre>
 <div class="grid"></div>
 <div class="grid"></div>
 <div class="clear"></div>
